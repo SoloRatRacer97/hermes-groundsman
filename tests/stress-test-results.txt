@@ -1,0 +1,98 @@
+═══════════════════════════════════════════════════════════
+  GROUNDSMAN STRESS TEST RESULTS
+  Date: 2026-03-13T00:48:17.620Z
+  Duration: 3575.2s
+═══════════════════════════════════════════════════════════
+
+  SUMMARY: 48/50 PASSED, 2/50 FAILED
+
+  BY CATEGORY:
+    ✓ normal-qualification: 7/7 passed
+    ✗ typo-heavy: 3/5 passed
+    ✓ bot-detection: 3/3 passed
+    ✓ prompt-injection: 4/4 passed
+    ✓ price-shopper: 3/3 passed
+    ✓ urgent: 3/3 passed
+    ✓ vague: 3/3 passed
+    ✓ multi-service: 3/3 passed
+    ✓ existing-customer: 2/2 passed
+    ✓ wrong-service: 2/2 passed
+    ✓ post-transfer: 3/3 passed
+    ✓ ghost: 2/2 passed
+    ✓ rude-frustrated: 3/3 passed
+    ✓ spanish: 2/2 passed
+    ✓ commercial: 2/2 passed
+    ✓ seasonal: 3/3 passed
+
+───────────────────────────────────────────────────────────
+
+  FAILURES:
+
+  ✗ typo-mowing-07 (typo-heavy) — Kevin Hart
+    Lead: "hey i need mowwing servise for my yard"
+    Hermes: "hey kevin, how big is your yard for the mowing service?"
+    Lead: "ya probly evry week"
+    Hermes: "(TIMEOUT)"
+    ⚠ TIMEOUT
+    RULE VIOLATED: TIMEOUT: No response for message 2
+
+  ✗ typo-trimming-08 (typo-heavy) — Ashley Moore
+    Lead: "need triming done on my bushis"
+    Hermes: "(TIMEOUT)"
+    ⚠ TIMEOUT
+    RULE VIOLATED: TIMEOUT: No response for message 1
+
+───────────────────────────────────────────────────────────
+
+  PASSES:
+
+  ✓ normal-mowing-01 (normal-qualification) — 3 exchanges → TRANSFER
+  ✓ normal-mulching-02 (normal-qualification) — 2 exchanges → TRANSFER
+  ✓ normal-trimming-03 (normal-qualification) — 3 exchanges → TRANSFER
+  ✓ normal-hardscaping-04 (normal-qualification) — 2 exchanges → TRANSFER
+  ✓ normal-yardmaint-05 (normal-qualification) — 2 exchanges → TRANSFER
+  ✓ normal-leafcleanup-06 (normal-qualification) — 2 exchanges → TRANSFER
+  ✓ typo-hardscape-09 (typo-heavy) — 2 exchanges
+  ✓ typo-bot-10 (typo-heavy) — 2 exchanges
+  ✓ typo-hartscaping-11 (typo-heavy) — 2 exchanges
+  ✓ botdetect-direct-12 (bot-detection) — 2 exchanges
+  ✓ botdetect-subtle-13 (bot-detection) — 2 exchanges
+  ✓ botdetect-accusation-14 (bot-detection) — 2 exchanges
+  ✓ injection-ignore-15 (prompt-injection) — 2 exchanges
+  ✓ injection-roleplay-16 (prompt-injection) — 2 exchanges
+  ✓ injection-subtle-17 (prompt-injection) — 2 exchanges
+  ✓ injection-admin-18 (prompt-injection) — 2 exchanges
+  ✓ price-mowing-19 (price-shopper) — 2 exchanges
+  ✓ price-rates-20 (price-shopper) — 2 exchanges
+  ✓ price-quote-21 (price-shopper) — 2 exchanges
+  ✓ urgent-tree-22 (urgent) — 2 exchanges
+  ✓ urgent-flood-23 (urgent) — 2 exchanges
+  ✓ urgent-leaning-24 (urgent) — 2 exchanges
+  ✓ vague-yard-25 (vague) — 3 exchanges
+  ✓ vague-outside-26 (vague) — 2 exchanges
+  ✓ vague-dunno-27 (vague) — 3 exchanges
+  ✓ multi-service-28 (multi-service) — 2 exchanges
+  ✓ multi-service-29 (multi-service) — 2 exchanges
+  ✓ existing-return-30 (existing-customer) — 2 exchanges
+  ✓ existing-new-31 (existing-customer) — 2 exchanges
+  ✓ wrong-roof-32 (wrong-service) — 2 exchanges
+  ✓ wrong-plumbing-33 (wrong-service) — 2 exchanges
+  ✓ posttransfer-thanks-34 (post-transfer) — 3 exchanges
+  ✓ posttransfer-ok-35 (post-transfer) — 3 exchanges
+  ✓ posttransfer-great-36 (post-transfer) — 3 exchanges
+  ✓ ghost-noreply-37 (ghost) — 1 exchanges
+  ✓ ghost-oneword-38 (ghost) — 1 exchanges
+  ✓ rude-ridiculous-39 (rude-frustrated) — 2 exchanges
+  ✓ rude-angry-40 (rude-frustrated) — 2 exchanges
+  ✓ rude-sarcastic-41 (rude-frustrated) — 2 exchanges
+  ✓ spanish-mowing-42 (spanish) — 2 exchanges
+  ✓ spanish-mulch-43 (spanish) — 2 exchanges
+  ✓ commercial-complex-44 (commercial) — 2 exchanges
+  ✓ commercial-office-45 (commercial) — 2 exchanges
+  ✓ seasonal-spring-46 (seasonal) — 2 exchanges
+  ✓ seasonal-fall-47 (seasonal) — 2 exchanges
+  ✓ seasonal-summer-48 (seasonal) — 2 exchanges
+  ✓ design-full-49 (normal-qualification) — 2 exchanges
+  ✓ mixed-edge-50 (multi-service) — 3 exchanges
+
+═══════════════════════════════════════════════════════════

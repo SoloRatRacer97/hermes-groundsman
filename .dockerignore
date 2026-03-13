@@ -1,0 +1,16 @@
+node_modules
+.env
+.git
+*.md
+!FRAMEWORK-GROUNDSMAN.md
+!README.md
+data/crucible-dataset.json
+data/crucible-results.tsv
+tests/
+test/
+__tests__/
+clients/
+scripts/
+logs/
+.DS_Store
+*.log

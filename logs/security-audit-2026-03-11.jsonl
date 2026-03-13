@@ -1,0 +1,2 @@
+{"type":"tier_routing","sessionId":"lead_1773170959722_t5nqirhho","tier":1,"confidence":0.75,"signals":["very_short","second_message"],"reasoning":"Very short response in conversation","messageLength":14,"timestamp":"2026-03-11T20:33:37.934Z"}
+{"type":"sms_send","phone":"********7742","bodyLength":54,"status":"error","errorCode":20003,"errorMessage":"Authenticate","timestamp":"2026-03-11T22:01:52.880Z"}

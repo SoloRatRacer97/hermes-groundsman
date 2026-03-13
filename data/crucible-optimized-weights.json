@@ -1,0 +1,89 @@
+{
+  "yesSignalWeights": {
+    "asks question": 5,
+    "agreement": 5,
+    "detail sharing": 5,
+    "scheduling intent": 5,
+    "gratitude": 5,
+    "urgency": 5,
+    "strong emphasis": 5,
+    "emergency situation": 5,
+    "buying commitment": 5,
+    "returning customer": 5,
+    "commercial scope": 5,
+    "insurance inquiry": 3.424999999999992,
+    "positive sentiment shift": 5
+  },
+  "resistanceSignalWeights": {
+    "minimal response": -4.00000000000001,
+    "hesitation": -5,
+    "price resistance": -2.7249999999999996,
+    "third-party deferral": -5,
+    "timing resistance": -5,
+    "opt-out signal": -5,
+    "hostile rejection": -5
+  },
+  "momentumThresholds": {
+    "emergency": 0.9249999999999999,
+    "critical": 1.649999999999999,
+    "buying": 1.5,
+    "soon": 2,
+    "shopping": 2.3000000000000025,
+    "planning": 1.8,
+    "browsing": 1.8,
+    "emotional": 1.649999999999999,
+    "analytical": 1.9349999999999992,
+    "complaining": 1.8,
+    "_default": 1.8
+  },
+  "globalTransferThreshold": 1.5,
+  "patternStrengths": {},
+  "objectionStrategies": {
+    "price": {
+      "weight": 1,
+      "attempts": 115,
+      "wins": 115
+    },
+    "think_about_it": {
+      "weight": 1,
+      "attempts": 515,
+      "wins": 515
+    },
+    "spouse": {
+      "weight": 1,
+      "attempts": 600,
+      "wins": 600
+    },
+    "timing": {
+      "weight": 1,
+      "attempts": 320,
+      "wins": 320
+    },
+    "trust": {
+      "weight": 1,
+      "attempts": 0,
+      "wins": 0
+    },
+    "competitor": {
+      "weight": 1,
+      "attempts": 0,
+      "wins": 0
+    },
+    "diy": {
+      "weight": 1,
+      "attempts": 0,
+      "wins": 0
+    }
+  },
+  "lengthBonusThreshold": 80,
+  "lengthBonusExtraThreshold": 150,
+  "shortMessagePenaltyThreshold": 10,
+  "_bounds": {
+    "yesMin": 0.1,
+    "yesMax": 5,
+    "resistanceMin": -5,
+    "resistanceMax": -0.1,
+    "thresholdMin": 0.5,
+    "thresholdMax": 5
+  }
+}

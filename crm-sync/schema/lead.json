@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Lead",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "phone", "service", "timeline", "temperature", "problem", "source", "submitted"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "phone": {
+      "type": "string",
+      "pattern": "^\\+?[1-9]\\d{6,14}$"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "maxLength": 254
+    },
+    "service": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timeline": {
+      "type": "string",
+      "enum": ["Today", "Tomorrow", "This week", "Next week", "This month", "Flexible", "Seasonal", "Unsure"]
+    },
+    "temperature": {
+      "type": "string",
+      "enum": ["HOT", "WARM", "COLD"]
+    },
+    "problem": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1
+    },
+    "submitted": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "conversationUrl": {
+      "type": "string",
+      "pattern": "^https://[a-zA-Z0-9-]+\\.slack\\.com/archives/"
+    }
+  }
+}

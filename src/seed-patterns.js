@@ -1,0 +1,168 @@
+/**
+ * Seed Patterns — V18 Conversation Antibodies
+ * Pre-built synthetic archetypes based on simulation test data.
+ */
+
+const SEED_PATTERNS = {
+  "repair:critical:brief:buying": {
+    sampleSize: 5,
+    successCount: 4,
+    conversionRate: 0.8,
+    skeleton: [
+      { step: 1, type: "empathy_opener", keyPoints: ["acknowledge urgency", "ask what happened"], avgLength: 80, examples: ["That sounds stressful! What's going on with your [service]?"] },
+      { step: 2, type: "quick_qualify", keyPoints: ["confirm timeline", "get location"], avgLength: 60, examples: ["When did this start? And what area are you in?"] },
+      { step: 3, type: "transfer", keyPoints: ["reassure", "ask for callback number"], avgLength: 70, examples: ["I've got someone who can help. Best number to reach you at?"] },
+    ],
+    avgConversationLength: 3.2,
+    lastUpdated: new Date().toISOString(),
+    source: "synthetic",
+  },
+  "repair:soon:verbose:shopping": {
+    sampleSize: 4,
+    successCount: 3,
+    conversionRate: 0.75,
+    skeleton: [
+      { step: 1, type: "greeting", keyPoints: ["acknowledge", "ask about issue"], avgLength: 70, examples: ["Hey [name]! Thanks for reaching out. What's going on with your [service]?"] },
+      { step: 2, type: "discovery", keyPoints: ["understand scope", "timeline"], avgLength: 90, examples: ["Got it. How long has this been going on? Is it getting worse?"] },
+      { step: 3, type: "empathy", keyPoints: ["validate concern", "transition to action"], avgLength: 80, examples: ["Yeah that's definitely something to get looked at. We can get you a quote."] },
+      { step: 4, type: "transfer", keyPoints: ["set expectations", "get contact info"], avgLength: 70, examples: ["Let me have one of our techs reach out. Best number for you?"] },
+    ],
+    avgConversationLength: 4.5,
+    lastUpdated: new Date().toISOString(),
+    source: "synthetic",
+  },
+  "install:planning:analytical:browsing": {
+    sampleSize: 4,
+    successCount: 3,
+    conversionRate: 0.75,
+    skeleton: [
+      { step: 1, type: "greeting", keyPoints: ["welcome", "ask what they're looking for"], avgLength: 70, examples: ["Hey [name]! What kind of system are you looking into?"] },
+      { step: 2, type: "discovery", keyPoints: ["understand needs", "home details"], avgLength: 100, examples: ["Got it. How old is your current setup? And roughly how big is the space?"] },
+      { step: 3, type: "follow_up", keyPoints: ["provide general info", "build trust"], avgLength: 90, examples: ["Makes sense. There are a few good options depending on your setup. Our guys can walk you through it."] },
+      { step: 4, type: "transfer", keyPoints: ["offer consultation", "get contact"], avgLength: 80, examples: ["Want me to have someone give you a call to go over options? No pressure."] },
+    ],
+    avgConversationLength: 5.0,
+    lastUpdated: new Date().toISOString(),
+    source: "synthetic",
+  },
+  "maintenance:planning:brief:buying": {
+    sampleSize: 5,
+    successCount: 5,
+    conversionRate: 1.0,
+    skeleton: [
+      { step: 1, type: "greeting", keyPoints: ["acknowledge", "confirm service"], avgLength: 60, examples: ["Hey [name]! Looking to get a tune-up scheduled?"] },
+      { step: 2, type: "quick_qualify", keyPoints: ["timeline", "location"], avgLength: 50, examples: ["When works best for you? And what's your zip?"] },
+      { step: 3, type: "transfer", keyPoints: ["confirm", "schedule"], avgLength: 60, examples: ["Perfect. Let me get you on the schedule. Best number to reach you?"] },
+    ],
+    avgConversationLength: 3.0,
+    lastUpdated: new Date().toISOString(),
+    source: "synthetic",
+  },
+  "repair:critical:emotional:buying": {
+    sampleSize: 5,
+    successCount: 4,
+    conversionRate: 0.8,
+    skeleton: [
+      { step: 1, type: "empathy_opener", keyPoints: ["validate emotions", "acknowledge urgency"], avgLength: 100, examples: ["I totally understand — that's really stressful. Let's get this taken care of for you."] },
+      { step: 2, type: "quick_qualify", keyPoints: ["confirm situation", "location"], avgLength: 70, examples: ["Is it still [issue]? And what area are you in?"] },
+      { step: 3, type: "transfer", keyPoints: ["reassure", "fast action", "get number"], avgLength: 80, examples: ["Okay, I'm going to get someone out there ASAP. Best number for you?"] },
+    ],
+    avgConversationLength: 3.0,
+    lastUpdated: new Date().toISOString(),
+    source: "synthetic",
+  },
+  "unknown:unknown:brief:unknown": {
+    sampleSize: 4,
+    successCount: 3,
+    conversionRate: 0.75,
+    skeleton: [
+      { step: 1, type: "greeting", keyPoints: ["warm welcome", "open discovery"], avgLength: 60, examples: ["Hey! Thanks for reaching out. What can we help you with?"] },
+      { step: 2, type: "discovery", keyPoints: ["understand need", "build rapport"], avgLength: 80, examples: ["Got it. Can you tell me a bit more about what's going on?"] },
+      { step: 3, type: "quick_qualify", keyPoints: ["timeline", "location"], avgLength: 60, examples: ["When are you looking to get this taken care of? And what area?"] },
+      { step: 4, type: "transfer", keyPoints: ["connect to team"], avgLength: 60, examples: ["Let me get you connected with our team. Best number?"] },
+    ],
+    avgConversationLength: 4.0,
+    lastUpdated: new Date().toISOString(),
+    source: "synthetic",
+  },
+  "repair:soon:brief:complaining": {
+    sampleSize: 4,
+    successCount: 3,
+    conversionRate: 0.75,
+    skeleton: [
+      { step: 1, type: "empathy_opener", keyPoints: ["acknowledge frustration", "don't be defensive"], avgLength: 80, examples: ["Sorry to hear that. What happened?"] },
+      { step: 2, type: "discovery", keyPoints: ["understand complaint", "show willingness to help"], avgLength: 90, examples: ["Got it. That's definitely not the experience you should be having. We can take a look."] },
+      { step: 3, type: "transfer", keyPoints: ["offer solution path", "get contact"], avgLength: 70, examples: ["Let me have someone reach out who can make this right. Best number?"] },
+    ],
+    avgConversationLength: 3.5,
+    lastUpdated: new Date().toISOString(),
+    source: "synthetic",
+  },
+  "repair:critical:brief:shopping": {
+    sampleSize: 3,
+    successCount: 3,
+    conversionRate: 1.0,
+    skeleton: [
+      { step: 1, type: "empathy_opener", keyPoints: ["acknowledge urgency", "ask details"], avgLength: 80, examples: ["That doesn't sound good. What's going on?"] },
+      { step: 2, type: "quick_qualify", keyPoints: ["understand scope", "pricing context"], avgLength: 70, examples: ["Got it. We can get someone out to take a look and give you a quote. What area are you in?"] },
+      { step: 3, type: "transfer", keyPoints: ["set expectations on pricing", "get contact"], avgLength: 80, examples: ["I'll have someone reach out with pricing. Best number for you?"] },
+    ],
+    avgConversationLength: 3.0,
+    lastUpdated: new Date().toISOString(),
+    source: "synthetic",
+  },
+  "install:planning:verbose:shopping": {
+    sampleSize: 3,
+    successCount: 3,
+    conversionRate: 1.0,
+    skeleton: [
+      { step: 1, type: "greeting", keyPoints: ["welcome", "ask about project"], avgLength: 70, examples: ["Hey [name]! Sounds like you're looking into a new system. What are you thinking?"] },
+      { step: 2, type: "discovery", keyPoints: ["understand requirements", "budget context"], avgLength: 100, examples: ["Got it. How big is the space? And do you have a rough budget in mind?"] },
+      { step: 3, type: "follow_up", keyPoints: ["provide value", "address concerns"], avgLength: 100, examples: ["There are some solid options in that range. Our guys can walk you through the pros and cons."] },
+      { step: 4, type: "transfer", keyPoints: ["offer free estimate", "get contact"], avgLength: 80, examples: ["Want me to set up a free estimate? They'll come out and give you exact numbers. Best number?"] },
+    ],
+    avgConversationLength: 5.0,
+    lastUpdated: new Date().toISOString(),
+    source: "synthetic",
+  },
+  "emergency:critical:emotional:buying": {
+    sampleSize: 4,
+    successCount: 4,
+    conversionRate: 1.0,
+    skeleton: [
+      { step: 1, type: "empathy_opener", keyPoints: ["immediate validation", "safety check"], avgLength: 90, examples: ["I'm on it. Are you and your family safe right now?"] },
+      { step: 2, type: "quick_qualify", keyPoints: ["confirm emergency", "location"], avgLength: 60, examples: ["Where are you located? I'll get someone dispatched right away."] },
+      { step: 3, type: "transfer", keyPoints: ["fast action", "reassurance"], avgLength: 70, examples: ["Someone's going to call you right now. Hang tight."] },
+    ],
+    avgConversationLength: 2.5,
+    lastUpdated: new Date().toISOString(),
+    source: "synthetic",
+  },
+  "maintenance:planning:analytical:browsing": {
+    sampleSize: 3,
+    successCount: 3,
+    conversionRate: 1.0,
+    skeleton: [
+      { step: 1, type: "greeting", keyPoints: ["welcome", "ask about system"], avgLength: 70, examples: ["Hey [name]! Looking into maintenance for your system?"] },
+      { step: 2, type: "discovery", keyPoints: ["system details", "last service date"], avgLength: 80, examples: ["When was the last time it was serviced? And what type of system do you have?"] },
+      { step: 3, type: "follow_up", keyPoints: ["recommend service", "explain value"], avgLength: 90, examples: ["Annual tune-ups help catch small issues before they become big ones. Definitely worth it."] },
+      { step: 4, type: "transfer", keyPoints: ["offer scheduling", "get contact"], avgLength: 70, examples: ["Want me to get you set up? Best number to reach you?"] },
+    ],
+    avgConversationLength: 4.0,
+    lastUpdated: new Date().toISOString(),
+    source: "synthetic",
+  },
+};
+
+/**
+ * Seed the pattern library with synthetic data
+ * @param {PatternLibrary} library
+ */
+function seedPatternLibrary(library) {
+  for (const [archetype, pattern] of Object.entries(SEED_PATTERNS)) {
+    library.setPattern(archetype, { ...pattern });
+  }
+  return Object.keys(SEED_PATTERNS).length;
+}
+
+module.exports = { seedPatternLibrary, SEED_PATTERNS };

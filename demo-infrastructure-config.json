@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-02-27T19:44:27.346Z",
+  "success": false,
+  "slack": {},
+  "asana": {},
+  "google": {},
+  "errors": [
+    "SLACK_BOT_TOKEN not found. Please set it in environment.",
+    "ASANA_PAT not found. Please set it in environment.",
+    "Google credentials not found. Please run auth setup first."
+  ]
+}

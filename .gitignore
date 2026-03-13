@@ -1,0 +1,9 @@
+node_modules/
+.env
+.gaius-requests/
+.gaius-responses/
+.hermes-interactive-state.json
+.hermes-sessions.json
+*.backup.js
+config/google-oauth-credentials.json
+config/google-oauth-token.json

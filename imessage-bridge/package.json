@@ -1,0 +1,13 @@
+{
+  "name": "imessage-bridge",
+  "version": "1.0.0",
+  "description": "Lightweight HTTP bridge for sending iMessages via osascript (runs natively on macOS)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "express-rate-limit": "^7.5.0"
+  }
+}

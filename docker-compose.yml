@@ -1,0 +1,79 @@
+version: "3.8"
+
+services:
+  hermes-groundsman:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hermes-groundsman
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+      - GROUNDSMAN_MODE=true
+      - IMESSAGE_BRIDGE_URL=http://host.docker.internal:3098
+      - IMESSAGE_BRIDGE_TOKEN=${BRIDGE_TOKEN}
+      - STATE_DIR=/app/state
+
+      - QUALIFIED_WEBHOOK_URL=${QUALIFIED_WEBHOOK_URL}
+      - USE_DIRECT_API=true
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - hermes-data:/data
+      - ./shared-requests:/app/.gaius-requests
+      - ./shared-responses:/app/.gaius-responses
+      - hermes-state:/app/state
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: "0.5"
+    networks:
+      - hermes-isolated
+      - bridge-access
+    read_only: false
+    security_opt:
+      - no-new-privileges:true
+
+  crm-sync:
+    build:
+      context: ./crm-sync
+      dockerfile: Dockerfile
+    container_name: crm-sync
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - SLACK_READ_TOKEN=${CRM_SLACK_READ_TOKEN}
+      - SLACK_CHANNEL_ID=${CRM_SLACK_CHANNEL_ID}
+      - CRM_ADAPTER=${CRM_ADAPTER:-webhook}
+      - CRM_API_KEY=${CRM_API_KEY}
+      - CRM_WEBHOOK_URL=${CRM_WEBHOOK_URL}
+      - RATE_LIMIT_PER_HOUR=${CRM_RATE_LIMIT_PER_HOUR:-20}
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+          cpus: "0.25"
+    networks:
+      - crm-isolated
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+
+networks:
+  hermes-isolated:
+    driver: bridge
+  bridge-access:
+    driver: bridge
+  crm-isolated:
+    driver: bridge
+
+volumes:
+  hermes-data:
+    driver: local
+  hermes-state:
+    driver: local

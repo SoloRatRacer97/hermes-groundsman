@@ -1,0 +1,6 @@
+{
+  "botToken": "SET_VIA_ENV_SLACK_BOT_TOKEN",
+  "appToken": "SET_VIA_ENV_SLACK_APP_TOKEN",
+  "channelName": "new-leads",
+  "channelId": "C0AF9862EAJ"
+}

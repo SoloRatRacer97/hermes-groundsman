@@ -1,0 +1,15 @@
+{
+  "name": "crm-sync",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CRM sync microservice — validates lead data from Slack and pushes to client CRMs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@slack/web-api": "^7.9.1",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  }
+}
