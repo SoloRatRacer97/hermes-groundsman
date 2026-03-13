@@ -252,7 +252,7 @@ class ConversationEngine {
       isLastFollowUp: followUpContext.isLastFollowUp,
     };
 
-    const followUpMessage = `[SYSTEM INSTRUCTION: The lead has not replied in ${followUpContext.elapsedMinutes} minutes. Send a brief, natural follow-up that references their original request. Do not re-introduce yourself.${followUpContext.isLastFollowUp ? ' This is the final follow-up — keep it light and leave the door open.' : ''}]`;
+    const followUpMessage = `[FOLLOW-UP: Lead has not replied in ${followUpContext.elapsedMinutes} minutes. Send a brief, natural follow-up referencing their original request. Do not re-introduce yourself.${followUpContext.isLastFollowUp ? ' This is the final follow-up — keep it light and leave the door open.' : ''}]`;
 
     try {
       const response = await this.gaiusRouter.askGaius(session, followUpMessage, context);

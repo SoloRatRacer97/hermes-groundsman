@@ -426,7 +426,7 @@ class GaiusRouter {
 
   /**
    * Direct Anthropic API call — no file watcher, no OpenClaw dependency
-   * Uses claude-sonnet-4-20250514 for cost efficiency
+   * Uses claude-sonnet-4-6 for cost efficiency
    */
   async _askDirectAPI(requestId, session, message, context) {
     console.log(`[GaiusRouter] Request ${requestId}: Direct API mode (Sonnet)`);
@@ -434,10 +434,8 @@ class GaiusRouter {
     try {
       const hermesPrompt = this.buildHermesPrompt(session, message, context);
       
-      // Split framework (system) from conversation (user) for better instruction following
-      const frameworkEnd = hermesPrompt.indexOf('\n---\nCONVERSATION:');
-      const systemPrompt = frameworkEnd > 0 ? hermesPrompt.substring(0, frameworkEnd) : this.defaultFramework;
-      const userContent = frameworkEnd > 0 ? hermesPrompt.substring(frameworkEnd) : hermesPrompt;
+      // Split: framework goes as system prompt, everything else as user message
+      const framework = this._getFrameworkForSession(session, context.frameworkOverride);
       
       const response = await fetch('https://api.anthropic.com/v1/messages', {
         method: 'POST',
@@ -447,10 +445,10 @@ class GaiusRouter {
           'anthropic-version': '2023-06-01'
         },
         body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
+          model: 'claude-sonnet-4-6',
           max_tokens: 200,
-          system: systemPrompt,
-          messages: [{ role: 'user', content: userContent }]
+          system: framework + '\n\nRESPONSE RULES: Respond with ONLY the message text to send to the lead. No meta-commentary, no markdown. Plain text, 1-2 sentences max.',
+          messages: [{ role: 'user', content: hermesPrompt }]
         })
       });
       
